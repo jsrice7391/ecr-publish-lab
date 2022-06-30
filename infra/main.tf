@@ -1,9 +1,9 @@
 terraform {
-#   backend "s3" {
-#     bucket = "ENTER_YOUR_BUCKET_NAME"
-#     key    = "terraform.tfstate"
-#     region = "us-east-1"
-#   }
+  backend "s3" {
+    bucket = "cloud-hippie-terraform-example-bucket"
+    key    = "terraform.tfstate"
+    region = "us-east-1"
+  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"

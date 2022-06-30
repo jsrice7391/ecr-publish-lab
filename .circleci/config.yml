@@ -1,0 +1,12 @@
+version: 2.1
+
+orbs:
+  aws-ecr: circleci/aws-ecr@volatile
+  aws-ecs: circleci/aws-ecs@volatile
+
+workflows:
+  build-and-deploy:
+    jobs:
+      - aws-ecr/build-and-push-image:
+          repo: cloud-hippie-ecr-repository
+          tag: "${CIRCLE_SHA1}"
