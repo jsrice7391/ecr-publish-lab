@@ -13,6 +13,9 @@ fi
 # 3. Using the AWS Command line, publish your Docker container to ECR.
 aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
 
+# Build the image
+docker build -t ecr-repo-test .       
+
 # 4. Use that same command line to verify that your container is published.
 docker tag ecr-repo-test $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/cloud-hippie-ecr-repository:ecr-repo-test
 
